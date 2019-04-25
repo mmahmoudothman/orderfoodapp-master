@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Order Food Application</string>
+    <string name="slogan_text">No matter where you are whether you are at home, orin the office, or on the beach - we will find you and we will feed you.</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+</resources>

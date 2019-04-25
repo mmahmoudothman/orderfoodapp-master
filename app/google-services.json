@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "648081425434",
+    "firebase_url": "https://order-food-37463.firebaseio.com",
+    "project_id": "order-food-37463",
+    "storage_bucket": "order-food-37463.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648081425434:android:1ec2338018ed379e",
+        "android_client_info": {
+          "package_name": "com.atakanakar.orderfoodapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648081425434-m15780biij8mer7n172vgt8an723d6n8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.atakanakar.orderfoodapplication",
+            "certificate_hash": "71f82e8c5c7290249c75e487d4521725b45e821b"
+          }
+        },
+        {
+          "client_id": "648081425434-4ochksj4adoqmk6gqktavksmegfbi1bn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwLShD8dBrbjcoen-FojyR4q9TgVXoqrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648081425434-4ochksj4adoqmk6gqktavksmegfbi1bn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
