@@ -111,7 +111,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 final Category clickItem = model;
 
                 //MenuViewHolder'da oluşturulan tıklama özellikleriyle cardView tıklanabilir hale geldi
-                holder.setOnItemClickListener(new ItemClickListener() {
+               /* holder.setOnItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
 
@@ -125,7 +125,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 
                     }
-                });
+                });*/
             }
 
             @NonNull
@@ -134,6 +134,21 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                 View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_design_layout,viewGroup,false);
                 MenuViewHolder holder = new MenuViewHolder(view);
+
+                //MenuViewHolder'da oluşturulan tıklama özellikleriyle cardView tıklanabilir hale geldi
+                holder.setOnItemClickListener(new ItemClickListener() {
+                    @Override
+                    public void onClick(View view, int position, boolean isLongClick) {
+                        //Get categoryId and send to new activity
+                        Intent foodIntent = new Intent(HomeActivity.this,FoodListActivity.class);
+
+                        String categoryIdKey = adapter.getRef(position).getKey();
+
+                        foodIntent.putExtra("categoryID",categoryIdKey);
+                        startActivity(foodIntent);
+
+                    }
+                });
                 return holder;
             }
         };

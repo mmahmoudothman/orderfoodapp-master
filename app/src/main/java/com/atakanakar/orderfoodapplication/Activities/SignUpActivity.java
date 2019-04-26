@@ -40,7 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
         buttonSignUp = findViewById(R.id.buttonSignUp2);
 
         mAuth = FirebaseDatabase.getInstance();
-        final DatabaseReference table_user = mAuth.getReference("user");
+        final DatabaseReference table_user_ref = mAuth.getReference("user");
 
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,17 +51,18 @@ public class SignUpActivity extends AppCompatActivity {
                 mDialog.show();
 
 
-                table_user.addValueEventListener(new ValueEventListener() {
+                table_user_ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                        //Eğer EditText'ten alınan telefon numarası database içindeki user'ın içinde var ise:
                         if (dataSnapshot.child(editTextPhoneUp.getText().toString()).exists()){
                             mDialog.dismiss();
                             showToast("Phone number already register");
                         } else {
                             mDialog.dismiss();
                             User user = new User(editTextName.getText().toString(),editTextPassword.getText().toString());
-                            table_user.child(editTextPhoneUp.getText().toString()).setValue(user);
+                            table_user_ref.child(editTextPhoneUp.getText().toString()).setValue(user);
                             showToast("Sign Up successfully");
                             finish();
                         }
