@@ -78,7 +78,7 @@ public class FoodListActivity extends AppCompatActivity {
                         .load(model.getImage())
                         .into(holder.foodImage);
 
-                final Food localFoodObject = model;
+//                final Food localFoodObject = model;
                 holder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
