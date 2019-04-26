@@ -79,7 +79,7 @@ public class FoodListActivity extends AppCompatActivity {
                         .into(holder.foodImage);
 
 //                final Food localFoodObject = model;
-                holder.setItemClickListener(new ItemClickListener() {
+              /*  holder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
 
@@ -89,7 +89,7 @@ public class FoodListActivity extends AppCompatActivity {
 
 
                     }
-                });
+                });*/
 
             }
 
@@ -100,6 +100,15 @@ public class FoodListActivity extends AppCompatActivity {
                 View view = LayoutInflater.from(viewGroup.getContext())
                         .inflate(R.layout.card_design_food_list,viewGroup,false);
                 FoodViewHolder holder = new FoodViewHolder(view);
+
+                holder.setItemClickListener(new ItemClickListener() {
+                    @Override
+                    public void onClick(View view, int position, boolean isLongClick) {
+                        Intent detailIntent = new Intent(FoodListActivity.this,FoodDetailActivity.class);
+                        detailIntent.putExtra("food_id",adapter.getRef(position).getKey());
+                        startActivity(detailIntent);
+                    }
+                });
 
                 return holder;
             }

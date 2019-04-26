@@ -109,6 +109,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 Picasso.with(getBaseContext()).load(model.getImage())
                         .into(holder.imageView);
                 final Category clickItem = model;
+
+                //MenuViewHolder'da oluşturulan tıklama özellikleriyle cardView tıklanabilir hale geldi
                 holder.setOnItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {

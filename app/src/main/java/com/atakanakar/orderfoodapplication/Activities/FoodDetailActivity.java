@@ -5,8 +5,10 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.atakanakar.orderfoodapplication.Model.Food;
 import com.atakanakar.orderfoodapplication.R;
@@ -47,24 +49,36 @@ public class FoodDetailActivity extends AppCompatActivity {
 
         imageViewFood = findViewById(R.id.imageViewFoodDetail);
 
+
+
+
         collapsingToolbarLayout = findViewById(R.id.collapsingID);
         collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.ExpandedAppbar);
         collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppbar);
 
         fabButtonCart = findViewById(R.id.fabButton);
+        fabButtonCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(FoodDetailActivity.this, "shoping", Toast.LENGTH_SHORT).show();
+            }
+        });
         numberButton = findViewById(R.id.number_button);
 
+        //Firebase
         database = FirebaseDatabase.getInstance();
         myRefFoodDetail = database.getReference("foods");
 
         if (getIntent() != null)
             foodId = getIntent().getStringExtra("food_id");
         if (!foodId.isEmpty()){
-            getDatailFood(foodId);
+            //FoodListActivity'den food'un key'ini aldık.
+            //Ve bunu aşağıdaki methodu kullanarak addValueEventListener ile dinledik
+            getDetailFood(foodId);
         }
 
     }
-    public void getDatailFood(String foodId){
+    public void getDetailFood(String foodId){
 
         myRefFoodDetail.child(foodId).addValueEventListener(new ValueEventListener() {
             @Override
